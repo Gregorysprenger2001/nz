@@ -23,7 +23,7 @@ let map = L.map('map').setView([lat, lng], zoom);
         //Popup definieren und öffnen
         
             marker.bindPopup(`
-                <b>Hello world!
-                </b><br>
-                I am a popup.
+                <b>Hello world!</b>
+                <br>
+                I am a popup at ${lat.toFixed(5)} / ${lng.toFixed(5)}.
                 `).openPopup();
