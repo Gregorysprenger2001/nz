@@ -217,20 +217,24 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 //loop über Etappen
 for (let i = 0; i < STOPS.length; i++) {
-    console.log(STOPS[i])
+  
 
     //Marker zeichnen
     let marker = L.marker([STOPS[i].lat, STOPS[i].lng]).addTo(map);
-    //Popup definieren und öffnen
+    //Popup definieren
 
-marker.bindPopup(`
+    marker.bindPopup(`
     
-    <h2>${STOPS[i].title}</h2>
-    <ul>
-    <li> Geogr. Breite: ${STOPS[i].lat.toFixed(5)}°</li>
-    <li> Geogr. Länge: ${STOPS[i].lng.toFixed(5)}°</li>
-    </ul>
-    `).openPopup();
-
+        <h2>${STOPS[i].title}</h2>
+        <ul>
+            <li> Geogr. Breite: ${STOPS[i].lat.toFixed(5)}°</li>
+            <li> Geogr. Länge: ${STOPS[i].lng.toFixed(5)}°</li>
+        </ul>
+    `);
+//auf eigene Etappe blicken und Popub öffnen
+    if (STOPS[i].user == "Gregorysprenger2001") {
+         map.setView([STOPS[i].lat, STOPS[i].lng], STOPS[i].zoom)
+         marker.openPopup();
+}
 };
 
