@@ -25,5 +25,9 @@ let map = L.map('map').setView([lat, lng], zoom);
             marker.bindPopup(`
                 <b>Hello world!</b>
                 <br>
-                I am a popup at ${lat.toFixed(5)} / ${lng.toFixed(5)}.
+                <h2>Cormandel Peninsula</h2>
+                <ul>
+                <li> Geogr. Breite: ${lat.toFixed(5)}°</li>
+                <li> Geogr. Länge:${lng.toFixed(5)}°</li>
+                </ul>
                 `).openPopup();
