@@ -4,9 +4,11 @@ Skript für Neuseelandreie
 */
 
 //Karte initialisieren
+let lat=-37.882778
+let lng= 175.636667
+let zoom=11
 
-
-let map = L.map('map').setView([-37.882778, 175.636667], 11);
+let map = L.map('map').setView([lat, lng], zoom);
 
 //Hintergrundkarte definieren
 
@@ -17,7 +19,7 @@ let map = L.map('map').setView([-37.882778, 175.636667], 11);
 
         //Marker zeichnen
 
-        let marker = L.marker([-37.882778, 175.636667]).addTo(map);
+        let marker = L.marker([lat, lng]).addTo(map);
         //Popup definieren und öffnen
         
         marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
