@@ -8,6 +8,15 @@ let lat=-37.882778
 let lng= 175.636667
 let zoom=11
 
+let stop= {  
+    nr: 4,
+    title: "Cormandel Peninsula",
+    usr:"Gregorysprenger2001",
+    lat: -37.882778,
+    lng: 175.636667,
+    zoom: 11,
+}
+ 
 let map = L.map('map').setView([lat, lng], zoom);
 
 //Hintergrundkarte definieren
@@ -28,6 +37,6 @@ let map = L.map('map').setView([lat, lng], zoom);
                 <h2>Cormandel Peninsula</h2>
                 <ul>
                 <li> Geogr. Breite: ${lat.toFixed(5)}°</li>
-                <li> Geogr. Länge:${lng.toFixed(5)}°</li>
+                <li> Geogr. Länge: ${lng.toFixed(5)}°</li>
                 </ul>
                 `).openPopup();
