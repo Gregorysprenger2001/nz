@@ -16,12 +16,12 @@ let stop = {
 }
 const STOPS = [
     {
+        nr: 1,
+        title: "Cape Reinga",
+        user: "vintiyannick",
         lat: -34.423889,
         lng: 172.6775,
         zoom: 13,
-        title: "Cape Reinga",
-        nr: 1,
-        user: "vintiyannick",
     },
     {
         nr: 2,
@@ -249,7 +249,7 @@ for (let i = 0; i < STOPS.length; i++) {
 
 //auf Änderungen beim Pulldown reagieren
 
-document.querySelector("#pulldown select").onchange =function (evt) {
+document.querySelector("#pulldown select").onchange = function (evt) {
     let url =`https://${evt.target.value}.github.io.nz`;
    
     // console.log(evt.target.value);
