@@ -208,12 +208,19 @@ console.log(STOPS[0].title)
 
 let map = L.map('map').setView([stop.lat, stop.lng], stop.zoom);
 
+//Overlays definieren
+let overlays = {
+    STOPS: L.featureGroup().addTo(map),
+}
+
 
 // Layercontrol 
 L.control.layers({
     "OpenStreetMap Mapnik": L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map),
     "OpenTopoMap": L.tileLayer.provider('OpenTopoMap'),
     "Esri WorldImagery": L.tileLayer.provider('Esri.WorldImagery'),
+}, {
+    "Etappen": overlays.STOPS
 }).addTo(map);
 
 //Maßstab
