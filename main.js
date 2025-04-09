@@ -208,6 +208,19 @@ console.log(STOPS[0].title)
 
 let map = L.map('map').setView([stop.lat, stop.lng], stop.zoom);
 
+
+// Layercontrol 
+L.control.layers({
+    "OpenStreetMap Mapnik": L.tileLayer.provider('OpenStreetMap.Mapnik').addTo(map),
+    "OpenTopoMap": L.tileLayer.provider('OpenTopoMap'),
+    "Esri WorldImagery": L.tileLayer.provider('Esri.WorldImagery'),
+}).addTo(map);
+
+//Maßstab
+L.control.scale({
+    imperial: false,
+}).addTo(map);
+
 //Hintergrundkarte definieren
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
